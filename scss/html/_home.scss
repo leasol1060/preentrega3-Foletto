@@ -1,0 +1,44 @@
+//variables
+@import "../utilidades/variables";
+@import "../utilidades/listas";
+@import "../utilidades/maps";
+@import "../utilidades/mixin";
+@import"../utilidades/extend";
+@import"../utilidades/condicionales";
+/*estilos en home*/
+
+
+/*estilos para el main*/
+
+main{
+    @include flex;
+    background-color: $color-secundario;
+    /*boton standard*/
+    .boton-standard{
+        background-color: map-get($standard , bg-standard);
+        color: map-get($standard , color-standard );
+    }
+
+    /*boton premium*/
+}
+
+/*estilos de section*/
+
+section{
+    //el extend me estira los estilos, y si encuentra 2 o mas etiquetas donde trabajo ese extend, me las va a agrupar
+    @extend %border;
+    background-color: $color-principal;
+    .producto-uno{
+        @include productos(300px, 300px,tomato);
+    }
+    .producto-dos{
+        @include productos(500px,300px,gold);
+    }
+}
+
+footer{
+
+    @extend %border;
+    
+    @include condicional (pink);
+}

@@ -1,0 +1,20 @@
+//las condicionales van a ser de manera manual desde el codigo
+//las condicionales no encuentran en la 3er entrega
+
+//si tengo x que pasa con y
+
+@mixin condicional($color-btn){
+    background-color: $color-btn;
+
+    //coondicion mediante el if y el else
+
+
+    @if $color-btn ==orange{
+        border: 2px solid black;
+        margin: 2rem;
+
+    }@else{
+        border: 3px solid white;
+        margin: 4ren;
+    }
+}

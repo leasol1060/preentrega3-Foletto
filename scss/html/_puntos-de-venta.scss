@@ -1,0 +1,12 @@
+//variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+main{
+    h1{
+        @include h1;
+    }
+    h2{
+        @include parah2;
+    }
+}

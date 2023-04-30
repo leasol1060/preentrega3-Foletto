@@ -1,0 +1,72 @@
+//variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+
+
+/*estilos para el header*/
+
+
+/*estilos para el main*/
+
+.main-productos {
+    div {
+        h1 {
+            @include h1;
+        }
+
+        img {
+            @include carrito (absolute, 70px, 10px, 100px);
+        }
+    }
+
+    div {
+        @include cajapadre;
+
+        div {
+            @include cajahijos;
+        }
+    }
+}
+
+
+.section-productos {
+    @include imagenes-videos;
+
+    div {
+        .img-uno {
+            @include imgproductosrow(span 1);
+        }
+    }
+
+    div {
+        .img-dos {
+            @include imgproductoscolumn (span 2);
+        }
+    }
+
+    div {
+        .img-tres {
+            @include imgproductoscolumn (span 3);
+        }
+    }
+
+    div {
+        .img-cuatro {
+            @include imgproductosrow(span 2);
+        }
+    }
+
+    div {
+        .img-cinco {
+            @include imgproductoscolumn (span 2);
+        }
+    }
+
+    div {
+        .img-seis {
+            @include imgproductoscolumn (span 5);
+        }
+    }
+}

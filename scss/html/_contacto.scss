@@ -1,0 +1,30 @@
+//variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+main{
+    h1 {
+        @include h1;
+    }
+    div{
+        img{
+            @include imgcontacto;
+        }
+        
+    }
+        form{
+         @include paraelform;
+         fieldset{
+            legend{
+                @include legenda;
+            }
+            div{
+                label{
+                    @include textolabel;
+                }
+            }
+         }
+    }
+
+}

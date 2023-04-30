@@ -1,0 +1,96 @@
+//variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+/*estilos en home*/
+
+/*estilos para el body*/
+body {
+    @include imagenfondo;
+}
+
+/*estilos para el header*/
+
+header {
+    nav {
+        div {
+            a {
+                @include menuhambhover;
+            }
+
+            div {
+                ul {
+                    li {
+                        a {
+                            @include menuhambhover;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+/*estilos para el main*/
+
+main {
+    @include estilosmain;
+
+    h1 {
+        @include h1;
+    }
+
+    p {
+        @include parrafosp;
+    }
+    section {
+        div {
+
+            button {
+                span {
+                    @include colorboton($colorboton-carrusel);
+                }
+            }
+        }
+    }
+}
+
+/*estilos para el footer*/
+
+footer {
+    @include estilosfooter;
+
+    h3 {
+        @include parah3;
+    }
+
+    div {
+        a {
+            .whatsapp {
+                @include redes (fixed, 5px, 5px, 60px, 60px);
+            }
+        }
+
+        a {
+            .instagram {
+                @include redes (fixed, 5px, 70px, 60px, 60px);
+            }
+        }
+
+        a {
+            .facebook {
+                @include redes (fixed, 5px, 140px, 60px, 60px);
+            }
+        }
+    }
+
+    div {
+        a {
+            .arriba {
+                @include botonera (fixed, 5px, 5px, 60px, 60px);
+            }
+
+        }
+    }
+}
