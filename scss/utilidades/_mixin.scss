@@ -50,7 +50,7 @@
     text-align: center;
     color: $color-h3;
     bottom: 0;
-    
+
 }
 
 @mixin imagenfondo {
@@ -91,7 +91,7 @@
     background-color: $background-color;
 }
 
-@mixin carrito ($position, $height, $right,$top) {
+@mixin carrito ($position, $height, $right, $top) {
     /*imagen del bolso-carrito*/
     position: $position;
     height: $height;
@@ -99,7 +99,7 @@
     top: $top;
 }
 
-@mixin imagenes-videos{
+@mixin imagenes-videos {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
@@ -108,12 +108,12 @@
     margin: 1rem 3rem 10rem 3rem;
 }
 
-@mixin cajapadre{
+@mixin cajapadre {
     margin-top: 30px;
     text-align: center;
 }
 
-@mixin cajahijos{
+@mixin cajahijos {
     background-color: darkgray;
     /* propiedades para el ancho de la etiqueta*/
     width: 150px;
@@ -124,19 +124,12 @@
     display: inline-block;
 }
 
-@mixin imagenesyvideos{
+@mixin imagenesyvideos {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 33% 33% 33%;
 }
-@mixin imgproductosrow($grid-row){
-        grid-row: $grid-row;
-}
 
-@mixin imgproductoscolumn ($grid-column){
-    grid-column: $grid-column;
-}
-
-@mixin imgcontacto{
+@mixin imgcontacto {
     display: block;
     margin: auto;
     margin-bottom: 10px;
@@ -144,7 +137,7 @@
     height: 400px;
 }
 
-@mixin paraelform{
+@mixin paraelform {
     color: rgb(17, 143, 160);
     text-align: center;
     height: auto;
@@ -152,14 +145,67 @@
 
 }
 
-@mixin legenda{
+@mixin legenda {
     font-size: 30px;
 }
-    
 
-@mixin textolabel{
+
+@mixin textolabel {
     height: 60px;
     font-size: 20px;
-    
-    
+
+
 }
+
+@mixin mediaqsection {
+    @media screen and (min-width:600px) {
+        /* estilos de section */
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50%);
+
+        .img-uno,
+        .img-tres {
+            grid-row: span 1;
+        }
+        .img-tres{
+            grid-column: span 2;
+        }
+        .img-dos, .img-cinco{
+            grid-row: span 1;
+        }
+        .img-cuatro {
+            grid-column: span 2;
+        }
+        .img-seis{
+            grid-column: span 1;
+        }
+    }
+}
+
+@mixin mediaqsectionescritorio{
+    @media screen and (min-width:1024px){
+            grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40% 40% 20%;
+    
+    .img-uno, .img-tres, .img-dos{
+        grid-row: span 2 ;
+    }
+    .img-tres{
+        grid-row: span 1;
+    }
+    .img-dos{
+        grid-column: span 2;
+    }
+    .img-cuatro{
+        grid-column: span 1;
+    }
+ 
+    .img-cinco, .img-seis{
+        grid-column: span 3;
+    }
+    }
+
+}
+
+ 
