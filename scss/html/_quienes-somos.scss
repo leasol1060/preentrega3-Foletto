@@ -1,0 +1,36 @@
+//variables
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+.main-quienessomos {
+    div {
+        @extend %marginypading;
+        @include h1;
+    }
+
+    div {
+        .imagen-quienessomos {
+            @include imagenes (block, auto, 30px, 100%, auto);
+                
+        }
+    }
+
+    p {
+        @include parrafosp;
+    }
+}
+
+.section-quienessomos {
+    @include imagenes-videos (100vh, grid, 1fr, repeat(.5, 33%), 1rem, 1rem 3rem 10rem 3rem);
+    @include mediaqsectionquiencelu;
+    @include mediaqsectionquientablet;
+    @include mediaqsectionquienescrit;
+
+    div {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
