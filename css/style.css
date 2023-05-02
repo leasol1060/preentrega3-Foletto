@@ -28,10 +28,10 @@ header nav div a:hover {
 
 header nav div a img {
   scale: 70%;
-  width: auto; }
+  width: 90%; }
   @media screen and (min-width: 300px) {
     header nav div a img {
-      padding: 2px; } }
+      padding: 0px; } }
 
 header nav div div ul li a:hover {
   border-bottom: 2px solid #3ee6e6; }

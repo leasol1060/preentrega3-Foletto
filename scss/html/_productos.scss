@@ -2,9 +2,6 @@
 @import "../utilidades/variables";
 @import "../utilidades/mixin";
 
-
-
-
 /*estilos para el header*/
 
 header {
@@ -16,10 +13,7 @@ header {
         }
     }
 }
-
-
 /*estilos para el main*/
-
 .main-productos {
     div {
         h1 {
@@ -27,7 +21,6 @@ header {
             @include h1;
         }
     }
-
     div {
         @include cajapadre;
         .caja:hover{
@@ -39,15 +32,10 @@ header {
         }
     }
 }
-
-
-
 .section-productos {
-
     @include mediaqsection;
     @include mediaqsectionescritorio;
     @include imagenes-videos (150vh, grid, 1fr, repeat(.5, 33%), 1rem, 1rem 3rem 10rem 3rem);
-
     div {
         img {
             width: 100%;
