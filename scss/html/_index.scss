@@ -1,21 +1,29 @@
 //variables
 @import "../utilidades/variables";
 @import "../utilidades/mixin";
+@import "../utilidades/extend";
 
 /*estilos en home*/
 
 /*estilos para el body*/
 body {
-    @include imagenfondo;
+    @extend %imagenfondo;
 }
 
 /*estilos para el header*/
 
 header {
+    
     nav {
         div {
             a {
                 @include menuhambhover;
+
+                img {
+                    scale: 80%;
+                    width: auto;
+                    @include mediaqlogocel;
+                }
             }
 
             div {
@@ -35,15 +43,19 @@ header {
 /*estilos para el main*/
 
 main {
+    @include mediaqmain;
     @include estilosmain;
 
+
     h1 {
+        @extend %marginypading;
         @include h1;
     }
 
     p {
         @include parrafosp;
     }
+
     section {
         div {
             button {

@@ -5,11 +5,12 @@
 
 main{
     h1 {
+        @extend %marginypading;
         @include h1;
     }
     div{
         img{
-            @include imgcontacto;
+            @include imagenes (block, auto, 30px, 100%, auto);
         }
         
     }

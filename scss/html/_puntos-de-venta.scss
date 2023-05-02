@@ -2,11 +2,29 @@
 @import "../utilidades/variables";
 @import "../utilidades/mixin";
 
-main{
+.main-puntosdeventa{
+     @include mainpuntosdeventa;
     h1{
+        @extend %marginypading;
         @include h1;
     }
     h2{
+        @extend %marginypading;
         @include parah2;
+    }
+    section {
+        div {
+            div {
+                div {
+                    iframe {
+                        width: 100%;
+                        height: 500px;
+                        object-fit: cover;
+
+
+                    }
+                }
+            }
+        }
     }
 }

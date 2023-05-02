@@ -1,65 +1,45 @@
 //lo que hacemos es pegar y pegar codigo, o de replicar el codigo
 
-//mixin con parametros
-
-
-//mixin con y sin parametros
-
+//mixin para el main
 @mixin estilosmain {
     text-align: center;
     padding-left: 100px;
     padding-right: 100px;
     margin: 10px;
 }
-
+//mixin para los parrafos
 @mixin parrafosp {
     color: $color-p;
     font-family: 'Anton', sans-serif;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     margin-top: 10px;
 }
-
+//mixin para el menu hamburguesa
 @mixin menuhambhover {
     &:hover {
-        border-bottom: 2px solid rgb(62, 230, 230);
-        color: rgb(69, 177, 219);
+        border-bottom: 2px solid $color-menuhambbotom;
     }
 }
-
+//mixin para los textos
 @mixin h1 {
     background-color: none;
-    color: rgb(0, 150, 150);
+    color: $color-h1;
     text-align: center;
-    /* espacio interno de una etiqueta*/
-    padding: 5px 30px 5px 40px;
-    /* espacio externo de una etiqueta*/
-    margin: 50px;
 }
-
 @mixin parah2 {
     text-align: center;
     color: $color-h2;
     bottom: 0;
-    padding: 5px 30px 5px 40px;
 }
-
 @mixin parah3 {
 
     text-align: center;
     color: $color-h3;
     bottom: 0;
-
 }
-
-@mixin imagenfondo {
-    background-color: #161616;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
-}
-
+//mixin para tamaños en los logos de  las redes sociales
 @mixin redes ($position, $bottom, $right, $width, $height) {
     /*para botón de face*/
     position: $position;
@@ -79,7 +59,7 @@
 }
 
 @mixin estilosfooter {
-    background-color: #161616;
+    background-color: $color-fondoprincipal;
     position: fixed;
     margin-top: 100px;
     bottom: 0;
@@ -99,13 +79,13 @@
     top: $top;
 }
 
-@mixin imagenes-videos {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(.5, 33%);
-    gap: 1rem;
-    margin: 1rem 3rem 10rem 3rem;
+@mixin imagenes-videos ($height, $display, $grid-template-columns, $grid-template-rows, $gap, $margin) {
+    height: $height;
+    display: $display;
+    grid-template-columns: $grid-template-columns;
+    grid-template-rows: $grid-template-rows;
+    gap: $gap;
+    margin: $margin;
 }
 
 @mixin cajapadre {
@@ -114,7 +94,7 @@
 }
 
 @mixin cajahijos {
-    background-color: darkgray;
+    background-color: $color-cajahijos;
     /* propiedades para el ancho de la etiqueta*/
     width: 150px;
     /* propiedades para el alto de la etiqueta*/
@@ -122,11 +102,7 @@
     margin: 50px;
     padding: 10px;
     display: inline-block;
-}
-
-@mixin imagenesyvideos {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 33% 33% 33%;
+    
 }
 
 @mixin imgcontacto {
@@ -138,7 +114,7 @@
 }
 
 @mixin paraelform {
-    color: rgb(17, 143, 160);
+    color: $color-formulario;
     text-align: center;
     height: auto;
     padding-bottom: 200px;
@@ -149,13 +125,26 @@
     font-size: 30px;
 }
 
-
 @mixin textolabel {
     height: 60px;
     font-size: 20px;
-
-
 }
+
+/*mediaquerins*/
+
+@mixin mediaqmain{
+    @media screen and (min-width:300px){
+        padding: 30px;
+
+    } 
+}
+
+@mixin mediaqlogocel{
+    @media screen and (min-width:300px){
+        padding: 2px;
+    }
+}
+
 
 @mixin mediaqsection {
     @media screen and (min-width:600px) {
@@ -163,49 +152,123 @@
 
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 50%);
-
         .img-uno,
         .img-tres {
             grid-row: span 1;
         }
-        .img-tres{
+        .img-tres {
             grid-column: span 2;
         }
-        .img-dos, .img-cinco{
+        .img-dos,
+        .img-cinco {
             grid-row: span 1;
         }
         .img-cuatro {
             grid-column: span 2;
         }
-        .img-seis{
+        .img-seis {
             grid-column: span 1;
         }
     }
 }
 
-@mixin mediaqsectionescritorio{
-    @media screen and (min-width:1024px){
-            grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40% 40% 20%;
-    
-    .img-uno, .img-tres, .img-dos{
-        grid-row: span 2 ;
-    }
-    .img-tres{
-        grid-row: span 1;
-    }
-    .img-dos{
-        grid-column: span 2;
-    }
-    .img-cuatro{
-        grid-column: span 1;
-    }
- 
-    .img-cinco, .img-seis{
-        grid-column: span 3;
-    }
-    }
+@mixin mediaqsectionescritorio {
+    @media screen and (min-width:1024px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 40% 40% 20%;
 
+        .img-uno,
+        .img-tres,
+        .img-dos {
+            grid-row: span 2;
+        }
+        .img-tres {
+            grid-row: span 1;
+        }
+        .img-dos {
+            grid-column: span 2;
+        }
+        .img-cuatro {
+            grid-column: span 1;
+        }
+        .img-cinco,
+        .img-seis {
+            grid-column: span 3;
+        }
+    }
 }
 
- 
+@mixin imagenes ($display, $margin, $margin-bottom, $max-width, $height) {
+    display: $display;
+    margin: $margin;
+    margin-bottom: $margin-bottom;
+    max-width: $max-width;
+    height: $height;
+}
+/*mediaquerin para tablet*/
+
+@mixin mediaqsectionquientablet {
+    @media screen and (min-width:600px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        .img-quiencinco,
+        .img-quienseis {
+            grid-row: span 1;
+            grid-column: span 2;
+        }
+
+        .img-quiendos,
+        .img-quientres,
+        .img-quiensiete {
+            grid-row: span 1;
+            grid-column: span 3;
+        }
+    }
+}
+
+/*mediaquerin para escritorio*/
+
+@mixin mediaqsectionquienescrit {
+    @media screen and (min-width:1024px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 33% 33% 34%;
+
+        .img-quiencinco,
+        .img-quienseis,
+        .img-quiensiete {
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+
+        .img-quiendos,
+        .img-quientres {
+            grid-row: span 1;
+            grid-column: span 3;
+        }
+    }
+}
+
+/*mediaquerin para celular*/
+@mixin mediaqsectionquiencelu {
+    @media screen and (min-width:300px) {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+
+        .img-quiencinco,
+        .img-quienseis,
+        .img-quiensiete,
+        .img-quiendos,
+        .img-quientres {
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+    }
+}
+@mixin mainpuntosdeventa {
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 10px;
+}
